@@ -1,1 +1,2 @@
-document.querySelectorAll('a[href^="#"]').forEach(link=>link.addEventListener('click',e=>{const t=document.querySelector(link.getAttribute('href'));if(t){e.preventDefault();t.scrollIntoView({behavior:'smooth'});}}));
+const obs=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('seen')}),{threshold:.12});
+document.querySelectorAll('.path,.big-values article,.officers>div,.live-grid>div,.gallery div').forEach(x=>{x.classList.add('reveal');obs.observe(x)});
